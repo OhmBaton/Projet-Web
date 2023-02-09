@@ -1,0 +1,106 @@
+html{
+    position:relative; 
+    min-height: 100%;
+}
+/*Normalize html and body elements,this style is just good to have*/
+html,body{
+    margin:0;
+    padding:0;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    height: 100%;
+}
+
+.divbody{
+    /*background:red;*/
+    position:absolute;
+    margin-top: 75px;
+    margin-bottom: 50px;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
+}
+
+.divsection{
+    height: 100%;
+}
+
+/* Style the header */
+header {
+    background-color: rgb(44, 51, 90);
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 75px;
+    overflow: hidden;
+    color: beige;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+    float: left;
+    width: 30%;
+    background: #ccc;
+    height: 100%;
+}
+
+/* Style the list inside the menu */
+nav ul {
+    list-style-type: none;
+}
+
+.divarticle {
+    float: right;
+    width: 70%;
+    background-color: #f1f1f1;
+    height: 100%;
+}
+
+/* Style the footer */
+footer {
+    background-color: rgb(44, 51, 90);
+    text-align: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    color: beige;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+    nav, article {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.divimage {
+    margin: auto;
+    width: 85%;
+    /*border: 5px solid green;*/
+    overflow: hidden;
+}
+
+.divcredit {
+    margin: auto;
+    margin-top: 30%;
+    width: 85%;
+    /*border: 5px solid green;*/
+    overflow: hidden;
+}
+
+.tablenav {
+    margin-left: 10%;
+}
+
+img {
+    width: 20%;
+}

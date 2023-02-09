@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Form to choice an image.</title>
+        <link rel="icon" href="/favicon.ico">
+        <link rel="stylesheet" href="/css/styles.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    </head>
+    <body>
+        <header>
+            <h1>Find an image :</h1>
+        </header>
+        <div id="container">
+            <div id="nav">
+                <form th:action="@{/form}" th:object="${nasaForm}" method="GET">
+                    <table class="tablenav">
+                        <tr>
+                            <h2 style="margin-left: 10%;">Select a year :</h2>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Year:</p>
+                            </td>
+                            <td>
+                                <select name="yearSelection">
+                                    <option th:each="year :${years}"  th:text="${year}"  >
+                                    </option>
+                                </select >
+                                <input type="submit" th:name="GO" th:value="GO" onclick="getValues()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>    
+                                <h2 style="margin-top: 50%;">Select a title :</h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Title:</p>
+                            </td>
+                            <td>
+                                <select name="titleSelection">
+                                    <option th:each="name :${names}"
+                                        th:text="${name}">
+                                    </option>
+                                </select>
+                                <input type="submit" th:name="Submit" th:value="Submit">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div id="image">
+                <h2>Image :</h2>
+                <img th:src="${url}" th:alt="${name}">
+            </div>
+            <div class="credits">
+                <h2> Credits</h2>
+                <p th:text="${credits}">
+                    Credits
+                </p>
+            </div>
+        </div>
+        <footer>
+            <p>© Florian Bonnin - 02/2023</p>
+        </footer>
+    </body>
+</html>
