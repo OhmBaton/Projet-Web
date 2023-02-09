@@ -1,34 +1,10 @@
 html{
     position:relative; 
     min-height: 100%;
-}
-/*Normalize html and body elements,this style is just good to have*/
-html,body{
     margin:0;
     padding:0;
 }
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0px;
-    height: 100%;
-}
 
-.divbody{
-    /*background:red;*/
-    position:absolute;
-    margin-top: 75px;
-    margin-bottom: 50px;
-    top:0px;
-    right:0px;
-    bottom:0px;
-    left:0px;
-}
-
-.divsection{
-    height: 100%;
-}
-
-/* Style the header */
 header {
     background-color: rgb(44, 51, 90);
     text-align: center;
@@ -41,27 +17,14 @@ header {
     color: beige;
 }
 
-/* Create two columns/boxes that floats next to each other */
-.divnav {
-    float: left;
-    width: 30%;
-    background: #ccc;
+body {
+    font-family: Arial, Helvetica, sans-serif;
     height: 100%;
+    font-weight: 300;
+    margin:0;
+    padding:0;
 }
 
-/* Style the list inside the menu */
-nav ul {
-    list-style-type: none;
-}
-
-.divarticle {
-    float: right;
-    width: 70%;
-    background-color: #f1f1f1;
-    height: 100%;
-}
-
-/* Style the footer */
 footer {
     background-color: rgb(44, 51, 90);
     text-align: center;
@@ -74,33 +37,144 @@ footer {
     color: beige;
 }
 
-/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-@media (max-width: 600px) {
-    nav, article {
-        width: 100%;
-        height: auto;
-    }
+#h2form {
+    text-align: center;
+    margin-top: 20px;
 }
 
-.divimage {
+h3 {
+
+}
+
+#indexbody {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    background-color: rgb(44, 51, 90);
+    color: beige;
+    margin: auto;
+    margin-top: 15%;
+    padding:0;
+    text-align: center;
+}
+
+#indexcontainer {
+
+}
+
+#indexlink {
+    color: beige;
+}
+
+#container{
+    /*background:red;*/
+    position:absolute;
+    margin-top: 75px;
+    margin-bottom: 50px;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
+}
+
+/* Create two columns/boxes that floats next to each other */
+#nav {
+    float: left;
+    width: 20%;
+    background: white;
+    height: 100%;
+}
+
+#article {
+    float: left;
+    width: 80%;
+    background-color: #f1f1f1;
+    height: 100%;
+}
+
+#image {
     margin: auto;
     width: 85%;
     /*border: 5px solid green;*/
     overflow: hidden;
 }
 
-.divcredit {
+#credits {
     margin: auto;
-    margin-top: 30%;
     width: 85%;
     /*border: 5px solid green;*/
     overflow: hidden;
-}
-
-.tablenav {
-    margin-left: 10%;
 }
 
 img {
-    width: 20%;
+    width: 35%;
+}
+
+form {
+    margin-top: 30px;
+    width: 100%;
+    height: 90%;
+}
+    
+select:hover {
+    outline: none;
+    border: 1px solid #095484;
+    background: #e6eef7;
+}
+    
+select {
+    padding: 10px;
+    margin-bottom: 25px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    background: whitesmoke;
+    width: 90%;
+    font-size: 16px;
+}
+
+option {
+    background: transparent;
+}
+
+.btn-block {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.select-block {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+button {
+    width: 150px;
+    padding: 15px;
+    border: none;
+    -webkit-border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    border-radius: 5px; 
+    background-color: rgb(44, 51, 90);
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #095484;
+}
+
+@media (min-width: 600px) {
+    .title-block {
+    display: flex;
+    justify-content: space-between;
+    }
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 1000px) {
+    #nav, #article {
+        width: 100%;
+        height: auto;
+    }
 }
