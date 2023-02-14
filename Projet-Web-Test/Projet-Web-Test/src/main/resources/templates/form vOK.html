@@ -1,180 +1,55 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Form to choice an image.</title>
-    <link rel="icon" href="/favicon.ico">
-<!--<link rel="stylesheet" href="styles.css">-->
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <style>
-        html{
-            position:relative; 
-            min-height: 100%;
-        }
-        /*Normalize html and body elements,this style is just good to have*/
-        html,body{
-            margin:0;
-            padding:0;
-        }
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0px;
-            height: 100%;
-        }
-
-        .divbody{
-            /*background:red;*/
-            position:absolute;
-            margin-top: 75px;
-            margin-bottom: 50px;
-            top:0px;
-            right:0px;
-            bottom:0px;
-            left:0px;
-        }
-
-        .divsection{
-            height: 100%;
-        }
-
-        /* Style the header */
-        header {
-            background-color: rgb(44, 51, 90);
-            text-align: center;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 75px;
-            overflow: hidden;
-            color: beige;
-        }
-
-        /* Create two columns/boxes that floats next to each other */
-        .divnav {
-            float: left;
-            width: 30%;
-            background: #ccc;
-            height: 100%;
-        }
-
-        /* Style the list inside the menu */
-        nav ul {
-            list-style-type: none;
-        }
-
-        .divarticle {
-            float: right;
-            width: 70%;
-            background-color: #f1f1f1;
-            height: 100%;
-        }
-
-        /* Style the footer */
-        footer {
-            background-color: rgb(44, 51, 90);
-            text-align: center;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 50px;
-            overflow: hidden;
-            color: beige;
-        }
-
-        /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-        @media (max-width: 600px) {
-            nav, article {
-                width: 100%;
-                height: auto;
-            }
-        }
-
-        .divimage {
-            margin: auto;
-            width: 85%;
-            /*border: 5px solid green;*/
-            overflow: hidden;
-        }
-
-        .divcredit {
-            margin: auto;
-            margin-top: 30%;
-            width: 85%;
-            /*border: 5px solid green;*/
-            overflow: hidden;
-        }
-
-        .tablenav {
-            margin-left: 10%;
-        }
-
-        img {
-            width: 20%;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Find an image :</h1>
-    </header>
-    <div class="divbody">
-        <div class="divsection">
-            <div class="divnav">
+    <head>
+        <title>Form to choice an image.</title>
+        <link rel="icon" href="/favicon.ico">
+        <link rel="stylesheet" href="/css/styles.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    </head>
+    <body>
+        <header>
+            <h1>Find an image :</h1>
+        </header>
+        <div id="container">
+            <div id="nav">
+                <h2 id="h2form">Image Search Form</h2>
                 <form th:action="@{/form}" th:object="${nasaForm}" method="GET">
-                    <table class="tablenav">
-                        <tr>
-                            <h2 style="margin-left: 10%;">Select a year :</h2>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>Year:</p>
-                            </td>
-                            <td>
-                                <select name="yearSelection">
-                                    <option th:each="year :${years}"  th:text="${year}"  >
-                                    </option>
-                                </select >
-                                <input type="submit" th:name="GO" th:value="GO" onclick="getValues()">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>    
-                                <h2 style="margin-top: 50%;">Select a title :</h2>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>Title:</p>
-                            </td>
-                            <td>
-                                <select name="titleSelection">
-                                    <option th:each="name :${names}"
-                                        th:text="${name}">
-                                    </option>
-                                </select>
-                                <input type="submit" th:name="Submit" th:value="Submit">
-                            </td>
-                        </tr>
-                    </table>
+                    <div class="select-block">
+                        <h3>1. Selection of year</h3>
+                        <select name="yearSelection">
+                            <option th:each="year :${years}"  th:text="${year}">
+                            </option>
+                        </select >
+                    </div>
+                    <div class="btn-block">
+                        <button type="submit" th:name="GO" th:value="GO" onclick="getValues()">A little step for a man</button>
+                    </div>
+                    <div class="select-block">
+                        <h3>2. Selection of title</h3>
+                        <select name="titleSelection">
+                            <option th:each="name :${names}"
+                                th:text="${name}">
+                            </option>
+                        </select>
+                    </div>
+                    <div class="btn-block">
+                        <button type="submit" th:name="Submit" th:value="Submit">A big step for humanity</button>
+                    </div>
                 </form>
             </div>
-            <div class="divarticle">
-                <div class="divimage">
+            <div id="article">
+                <div id="image">
                     <h2>Image :</h2>
-                    <img th:src="${url}" style >
+                    <img th:src="${url}" th:alt="${name}">
                 </div>
-                <div class="divcredit">
-                    <h2> Credits</h2>
-                    <p th:text="${credits}">
-                        Credits
-                    </p>
+                <div id="credits">
+                    <h2>Credits :</h2>
+                    <p th:text="${credits}"></p>
                 </div>
             </div>
         </div>
-    </div>
-    <footer>
-        <p>© Florian Bonnin - 02/2023</p>
-    </footer>
-</body>
+        <footer>
+            <p>© Florian Bonnin - 02/2023</p>
+        </footer>
+    </body>
 </html>

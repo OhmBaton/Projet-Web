@@ -8,7 +8,7 @@ html{
 header {
     background-color: rgb(44, 51, 90);
     text-align: center;
-    position: absolute;
+    position: relative;
     left: 0;
     top: 0;
     width: 100%;
@@ -20,7 +20,7 @@ header {
 body {
     font-family: Arial, Helvetica, sans-serif;
     height: 100%;
-    font-weight: 300;
+    font-weight: 8vw;
     margin:0;
     padding:0;
 }
@@ -28,7 +28,7 @@ body {
 footer {
     background-color: rgb(44, 51, 90);
     text-align: center;
-    position: absolute;
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -52,13 +52,13 @@ h3 {
     background-color: rgb(44, 51, 90);
     color: beige;
     margin: auto;
-    margin-top: 15%;
+    /*margin-top: 15%;*/
     padding:0;
     text-align: center;
 }
 
 #indexcontainer {
-
+    animation: index 4s forwards;
 }
 
 #indexlink {
@@ -66,59 +66,67 @@ h3 {
 }
 
 #container{
-    /*background:red;*/
-    position:absolute;
-    margin-top: 75px;
-    margin-bottom: 50px;
+    height: calc(100vh - (75px + 50px));
+    /*margin-top: 75px;*/
     top:0px;
     right:0px;
     bottom:0px;
     left:0px;
+    background-color: coral;
+    height: 100%;
+}
+
+.flex-container {
+    display: flex;  
+    flex-direction: column;
+    /*height:  100%;*/
+}
+
+.flex-image {
+    padding: 0px 0 0px 50px;
+}
+
+.flex-credits {
+    /*padding: 25px 300px 45px 50px;*/
+    padding-left: 50px;
 }
 
 /* Create two columns/boxes that floats next to each other */
-#nav {
+nav {
     float: left;
     width: 20%;
-    background: white;
     height: 100%;
 }
 
-#article {
-    float: left;
-    width: 80%;
+article {
     background-color: #f1f1f1;
-    height: 100%;
 }
 
 #image {
-    margin: auto;
-    width: 85%;
-    /*border: 5px solid green;*/
-    overflow: hidden;
+
 }
 
 #credits {
-    margin: auto;
-    width: 85%;
-    /*border: 5px solid green;*/
-    overflow: hidden;
+
 }
 
 img {
-    width: 35%;
+    max-width: 55%;
+    max-height: 60%;
 }
 
 form {
-    margin-top: 30px;
-    width: 100%;
-    height: 90%;
+    height: 100%;
 }
     
 select:hover {
     outline: none;
     border: 1px solid #095484;
     background: #e6eef7;
+}
+
+#before-footer {
+    width: 100%;
 }
     
 select {
@@ -128,7 +136,7 @@ select {
     border: 1px solid #ccc;
     background: whitesmoke;
     width: 90%;
-    font-size: 16px;
+    /*font-size: 2vw;*/
 }
 
 option {
@@ -155,13 +163,15 @@ button {
     -moz-border-radius: 5px; 
     border-radius: 5px; 
     background-color: rgb(44, 51, 90);
-    font-size: 16px;
+    /*font-size: 8vw;*/
     color: white;
     cursor: pointer;
+    animation: button-rotax-reverse 1s forwards;
 }
 
 button:hover {
     background-color: #095484;
+    animation: button-rotax 1s forwards;
 }
 
 @media (min-width: 600px) {
@@ -173,8 +183,27 @@ button:hover {
 
 /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
 @media (max-width: 1000px) {
-    #nav, #article {
+    nav, article {
         width: 100%;
         height: auto;
+        text-align: center;
+        padding: 0;
+        margin: 0;
     }
+}
+
+/*Animation*/
+@keyframes index {
+    from {margin-top: 25px;}
+    to {margin-top: 20%;}
+}
+
+@keyframes button-rotax {
+    from { rotate: 0deg;}
+    to {rotate: 5deg;}
+}
+
+@keyframes button-rotax-reverse {
+    from { rotate: 5deg;}
+    to {rotate: 0deg;}
 }
