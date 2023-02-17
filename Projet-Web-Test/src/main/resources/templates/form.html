@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Form to choice an image.</title>
+        <link rel="icon" href="/favicon.ico">
+        <link rel="stylesheet" href="/css/styles.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <h1>Find an image :</h1>
+            </header>
+            <nav class="content-nav">
+                <h2 id="h2form">Image Search Form</h2>
+                <form th:action="@{/form}" th:object="${nasaForm}" method="GET">
+                    <div class="select-block">
+                        <h3>1. Selection of year</h3>
+                        <select name="yearSelection">
+                            <option th:each="year :${years}"  th:text="${year}">
+                            </option>
+                        </select >
+                    </div>
+                    <div class="btn-block">
+                        <button type="submit" th:name="GO" th:value="GO" onclick="getValues()">A small step for man</button>
+                    </div>
+                    <div class="select-block">
+                        <h3>2. Selection of title</h3>
+                        <select name="titleSelection">
+                            <option th:each="name :${names}"
+                                th:text="${name}">
+                            </option>
+                        </select>
+                    </div>
+                    <div class="btn-block">
+                        <button type="submit" th:name="Submit" th:value="Submit">A giant leap for mankind</button>
+                    </div>
+                </form>
+            </nav>
+            <article class="content-article">
+                <h2 th:text="${name}"></h2>
+                <img th:src="${url}" th:alt="${name}"></img>
+            </article>
+            <div class="content-credits">
+                <h2>Credits :</h2>
+                <p th:text="${credits}"></p>
+            </div>
+            <footer class="footer">
+            <p>© Florian Bonnin - 02/2023</p>
+            </footer>
+        </div>
+    </body>
+</html>

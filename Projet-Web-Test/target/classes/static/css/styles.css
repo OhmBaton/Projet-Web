@@ -1,0 +1,217 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    margin:0;
+    padding: 0;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+
+    font-weight: bold;
+    /*font-size: 4vw;*/
+
+    display: grid;
+
+    grid-template: 75px 1fr 1fr 50px / repeat(3, 1fr);
+
+    box-sizing: border-box;
+}
+
+.header {
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+    background-color: rgb(44, 51, 90);
+    text-align: center;
+    color: beige;
+}
+
+.content-nav {
+    grid-row-start: 2;
+    grid-row-end: span 2;
+}
+
+.content-article {
+    grid-row-start: 2;
+    grid-row-end: span 1;
+    grid-column-start: 2;
+    grid-column-end: 4;
+
+    background-color: #f1f1f1;
+
+    /*overflow: auto;*/
+
+    padding-left: 50px;
+
+    /* object-fit: scale-down; */
+}
+
+.content-credits {
+    grid-row-start: 3;
+    grid-row-end: span 1;
+    grid-column-start: 2;
+    grid-column-end: 4;
+
+    background-color: #f1f1f1;
+
+    padding-left: 50px;
+}
+
+.footer {
+    grid-column: 1 / span 3;
+
+    background-color: rgb(44, 51, 90);
+    text-align: center;
+    color: beige;
+}
+
+#h2form {
+    /* text-align: center; */
+    padding-left: 30px;
+    margin-top: 20px;
+}
+
+img {
+    
+    max-width: 40%;
+   /* max-height: 60%;
+    */
+}
+
+select {
+    padding: 10px;
+
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    background: whitesmoke;
+
+    width: 100%;
+}
+
+.select-block {
+    padding: 30px;
+}
+
+option {
+    background: transparent;
+}
+
+button {
+    width: 150px;
+    padding: 15px;
+
+    border: none;
+    -webkit-border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    border-radius: 5px; 
+
+    background-color: rgb(44, 51, 90);
+
+    color: white;
+    cursor: pointer;
+
+    transition: rotate .2s ease-in-out;
+}
+
+.btn-block {
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    text-align: center;
+}
+
+/*------ HOVER ------*/
+select:hover {
+    outline: none;
+    border: 1px solid #095484;
+    background: #e6eef7;
+}
+
+button:hover {
+    background-color: #095484;
+    rotate: 5deg;
+}
+
+/*------ RESPONSIVE ------*/
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 500px) {
+    .container {
+        grid-template: 75px 1fr 1fr 1fr 50px / repeat(3, 1fr);
+
+        font-size: 15px;
+    }
+
+    .content-nav {
+        grid-row-start: 2;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+    
+    .content-article {
+        grid-row-start: 3;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    .content-credits {
+        grid-row-start: 4;
+        grid-row-end: 4;
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    .header {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    img {
+        max-width: 90%;
+        max-height: 100%;
+        margin: auto;
+        padding: 0;
+    }   
+
+    .select-block {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 800px) {
+    .select-block {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/*------- ANIMATIONS ------*/
+@keyframes index {
+    from {margin-top: 25px;}
+    to {margin-top: 20%;}
+}
+
+/*------- INDEX.HTML --------*/
+#indexbody {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    background-color: rgb(44, 51, 90);
+    color: beige;
+    margin: auto;
+    /*margin-top: 15%;*/
+    padding:0;
+    text-align: center;
+}
+
+#indexcontainer {
+    animation: index 4s forwards;
+}
+
+#indexlink {
+    color: beige;
+}
